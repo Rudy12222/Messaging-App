@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nachrichten App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <h1>Nachrichten App</h1>
+
+      <label>Benutzername
+        <input id="username" type="text" maxlength="30" placeholder="Dein Name" />
+      </label>
+      <button id="saveNameButton">Name speichern</button>
+
+      <label>Chatraum
+        <input id="room" type="text" maxlength="50" value="allgemein" />
+      </label>
+      <button id="joinRoomButton">Raum beitreten</button>
+
+      <div class="panel">
+        <h2>Aktive Benutzer</h2>
+        <ul id="activeUsers"></ul>
+      </div>
+    </aside>
+
+    <main class="chat">
+      <div class="chat-header">
+        <strong id="currentRoom">Raum: -</strong>
+        <span id="status">Nicht verbunden</span>
+      </div>
+
+      <div id="messages" class="messages"></div>
+
+      <form id="messageForm" class="message-form">
+        <input id="messageInput" type="text" maxlength="500" placeholder="Schreibe eine Nachricht..." autocomplete="off" />
+        <button type="submit">Senden</button>
+      </form>
+    </main>
+  </div>
+
+  <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
