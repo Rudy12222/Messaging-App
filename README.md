@@ -55,3 +55,6 @@ npm start
    ```
 
 Wenn Port 8080 bei dir besetzt ist, ist das normal. Der Client laeuft hier auf **8081**.
+
+Hinweis: docker-compose.override.yml ist fuer lokale Port-Einstellungen gedacht.
+
