@@ -1,4 +1,4 @@
-// Im Browser lokal ist das Backend auf Port 3000 erreichbar.
+// Local backend runs on port 3000.
 const apiBase = `${window.location.protocol}//${window.location.hostname}:3000`;
 const socket = io(apiBase, { transports: ["websocket", "polling"] });
 
@@ -51,6 +51,7 @@ function saveUsername() {
   currentUsername = usernameInput.value.trim() || "Gast";
   localStorage.setItem("chat-username", currentUsername);
 
+  // Send the name to the server and keep it in sync.
   socket.emit("set-username", { username: currentUsername }, (response) => {
     if (!response?.ok) {
       alert(response?.error || "Benutzername konnte nicht gespeichert werden.");
@@ -66,6 +67,7 @@ function joinRoom() {
   const room = roomInput.value.trim() || "allgemein";
   currentRoom = room;
 
+  // Join the selected room and load its chat history.
   socket.emit("join-room", { room, username: currentUsername }, (response) => {
     if (!response?.ok) {
       alert(response?.error || "Raum konnte nicht betreten werden.");
@@ -87,6 +89,7 @@ function sendMessage(event) {
     return;
   }
 
+  // Send the message only when a room is active.
   socket.emit("send-message", { room: currentRoom, username: currentUsername, text }, (response) => {
     if (!response?.ok) {
       alert(response?.error || "Nachricht konnte nicht gesendet werden.");
@@ -112,11 +115,12 @@ function renderMessage(message) {
 
   const meta = document.createElement("div");
   meta.className = "message-meta";
+  // Show the sender and local time.
   const time = new Date(message.created_at || Date.now()).toLocaleTimeString("de-CH", {
     hour: "2-digit",
     minute: "2-digit"
   });
-  meta.textContent = `${message.username} • ${time}`;
+  meta.textContent = `${message.username} ï¿½ ${time}`;
 
   const text = document.createElement("div");
   text.textContent = message.text;

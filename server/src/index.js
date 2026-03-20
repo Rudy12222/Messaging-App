@@ -24,7 +24,7 @@ const pool = new Pool({
   connectionString: databaseUrl
 });
 
-// Hier merken wir uns, wer gerade in welchem Raum online ist.
+// Track which users are online in each room.
 const activeUsersByRoom = new Map();
 
 app.use(cors({ origin: clientOrigin }));
@@ -32,6 +32,7 @@ app.use(express.json());
 
 app.get("/health", async (_req, res) => {
   try {
+    // Healthcheck: confirm the database answer works.
     await pool.query("SELECT 1");
     res.json({ ok: true });
   } catch (_error) {
@@ -150,7 +151,7 @@ async function start() {
   await waitForDatabase();
   await createTables();
   server.listen(port, () => {
-    console.log(`Server läuft auf Port ${port}`);
+    console.log(`Server lï¿½uft auf Port ${port}`);
   });
 }
 
@@ -169,6 +170,7 @@ async function waitForDatabase() {
 }
 
 async function createTables() {
+  // Create tables on startup if they do not exist yet.
   await pool.query(`
     CREATE TABLE IF NOT EXISTS users (
       id SERIAL PRIMARY KEY,
@@ -198,6 +200,7 @@ async function saveUser(username) {
 }
 
 async function saveMessage({ room, username, text }) {
+  // Store one chat message and return the saved row.
   const result = await pool.query(
     `INSERT INTO messages (room_name, username, message_text)
      VALUES ($1, $2, $3)
