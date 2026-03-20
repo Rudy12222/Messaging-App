@@ -38,3 +38,20 @@ npm start
 - `docs/blackbox-testprotokoll.md` ? Testprotokoll
 - `docs/ausfallsicherheit.md` ? Ausfallanalyse
 
+
+## Schnellstart (lokal)
+1. Datenbank starten:
+   ```bash
+   npm run db:up
+   ```
+2. Im Ordner `server` einmal installieren:
+   ```bash
+   npm install
+   ```
+3. Optional: `server/.env.local.example` nach `.env` kopieren.
+4. Backend starten:
+   ```bash
+   npm start --prefix server
+   ```
+
+Wenn Port 8080 bei dir besetzt ist, ist das normal. Der Client laeuft hier auf **8081**.
