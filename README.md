@@ -22,7 +22,7 @@ docker compose up --build
 ```
 
 Danach:
-- Client: http://localhost:8080
+- Client: http://localhost:8081
 - Backend Healthcheck: http://localhost:3000/health
 
 ## Lokale Entwicklung ohne Docker
@@ -37,3 +37,4 @@ npm start
 - `server/` ? API und Socket Server
 - `docs/blackbox-testprotokoll.md` ? Testprotokoll
 - `docs/ausfallsicherheit.md` ? Ausfallanalyse
+
