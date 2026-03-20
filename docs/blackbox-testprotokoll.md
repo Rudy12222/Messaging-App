@@ -37,3 +37,7 @@
 - **Schritt:** Container stoppen und wieder starten.
 - **Erwartet:** Alte Nachrichten sind noch vorhanden.
 - **Ergebnis:** Erfolgreich, weil PostgreSQL-Volume verwendet wird.
+
+## Kurzfazit
+Alle Kernfunktionen wurden erfolgreich getestet. Offener Punkt: Fremdsystem-Test sollte vor Abgabe nochmal gemacht werden.
+
