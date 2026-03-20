@@ -19,3 +19,9 @@
 - **Aufgabe:** Startet alle Teile in einer klaren und wiederholbaren Umgebung.
 - **Ausfall:** Die App kann auf einem fremden System nicht einfach gestartet werden.
 - **Verbesserung:** Versionsfixierung, `.env`-Dateien und klare Startanleitung.
+
+## Konkrete naechste Schritte
+- Healthchecks fuer alle Services aktiv lassen
+- taegliches DB-Backup einplanen
+- Logging zentral sammeln (z. B. Loki/ELK spaeter)
+
