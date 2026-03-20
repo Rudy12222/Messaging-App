@@ -1,6 +1,6 @@
-# Nachrichten App
+ï»¿# Nachrichten App
 
-Einfache Chat-App für Modul 321.
+Einfache Chat-App fÃ¼r Modul 321.
 
 ## Architektur
 - **Client:** HTML, CSS und JavaScript
@@ -9,7 +9,7 @@ Einfache Chat-App für Modul 321.
 - **Container:** Docker Compose mit 3 Services
 
 ## Funktionen
-- Benutzername eingeben und ändern
+- Benutzername eingeben und Ã¤ndern
 - Chatraum beitreten
 - Nachrichten lesen und schreiben
 - Aktive Benutzer im Raum sehen
@@ -33,7 +33,7 @@ npm start
 ```
 
 ## Wichtige Dateien
-- `client/` ? Oberfläche
+- `client/` ? OberflÃ¤che
 - `server/` ? API und Socket Server
 - `docs/blackbox-testprotokoll.md` ? Testprotokoll
 - `docs/ausfallsicherheit.md` ? Ausfallanalyse
@@ -54,7 +54,6 @@ npm start
    npm start --prefix server
    ```
 
-Wenn Port 8080 bei dir besetzt ist, ist das normal. Der Client laeuft hier auf **8081**.
+Wenn Port 8080 bei dir besetzt ist, ist das normal. Der Client lÃ¤uft hier auf **8081**.
 
-Hinweis: docker-compose.override.yml ist fuer lokale Port-Einstellungen gedacht.
-
+Hinweis: docker-compose.override.yml ist fÃ¼r lokale Port-Einstellungen gedacht.

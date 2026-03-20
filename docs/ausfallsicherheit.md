@@ -1,9 +1,9 @@
-# Ausfallsicherheit und Bedeutung der Systemteile
+﻿# Ausfallsicherheit und Bedeutung der Systemteile
 
 ## Client
-- **Aufgabe:** Oberfl�che f�r Benutzername, Raum, Nachrichten und aktive Benutzer.
-- **Ausfall:** Benutzer k�nnen nicht chatten, obwohl Backend und Datenbank noch laufen.
-- **Verbesserung:** Statische Dateien �ber zweiten Webserver oder CDN spiegeln.
+- **Aufgabe:** Oberfläche für Benutzername, Raum, Nachrichten und aktive Benutzer.
+- **Ausfall:** Benutzer können nicht chatten, obwohl Backend und Datenbank noch laufen.
+- **Verbesserung:** Statische Dateien über zweiten Webserver oder CDN spiegeln.
 
 ## Backend
 - **Aufgabe:** Verbindet Client und Datenbank, verteilt Nachrichten in Echtzeit.
@@ -12,7 +12,7 @@
 
 ## Datenbank
 - **Aufgabe:** Speichert Benutzer und Nachrichten dauerhaft.
-- **Ausfall:** Alte Daten nicht mehr lesbar, neue Daten k�nnen nicht gespeichert werden.
+- **Ausfall:** Alte Daten nicht mehr lesbar, neue Daten können nicht gespeichert werden.
 - **Verbesserung:** Replikation, Backups und Monitoring.
 
 ## Docker / Compose
@@ -20,8 +20,7 @@
 - **Ausfall:** Die App kann auf einem fremden System nicht einfach gestartet werden.
 - **Verbesserung:** Versionsfixierung, `.env`-Dateien und klare Startanleitung.
 
-## Konkrete naechste Schritte
-- Healthchecks fuer alle Services aktiv lassen
-- taegliches DB-Backup einplanen
-- Logging zentral sammeln (z. B. Loki/ELK spaeter)
-
+## Konkrete nächste Schritte
+- Healthchecks für alle Services aktiv lassen
+- tägliches DB-Backup einplanen
+- Logging zentral sammeln (z. B. Loki/ELK später)
