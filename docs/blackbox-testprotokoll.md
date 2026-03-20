@@ -2,12 +2,12 @@
 
 ## Testumgebung
 
-- Client im Browser �ber `http://localhost:8080`
-- Backend �ber Docker Compose gestartet
+- Client im Browser über `http://localhost:8080`
+- Backend über Docker Compose gestartet
 - Datenbank PostgreSQL im Container
 - Testdatum: 2026-03-15
 
-## Testf�lle
+## Testfülle
 
 ### 1. Benutzername setzen
 
